@@ -311,6 +311,6 @@ example) or explicit (with a curve).
 Similarly with the 'SourceTime' double parameter in the retimer context.
 It is up to the host to provide a UI for this, either implicitly (say by
 stretching a clip's length on the time line) or via an explicit curve.
-Note that the host is not limitted to using a UI that exposes the
+Note that the host is not limited to using a UI that exposes the
 'SourceTime' as a curve, alternately it could present a 'speed'
 parameter, and integrate that to derive a value for 'SourceTime'.

@@ -87,7 +87,7 @@ struct MyInstanceData {
 };
 
 
-// Convinience wrapper to get private data 
+// Convenience wrapper to get private data 
 static MyInstanceData *
 getMyInstanceData(OfxImageEffectHandle effect)
 {
@@ -387,7 +387,7 @@ static OfxStatus render(OfxImageEffectHandle effect,
   }
   catch(OfxuNoImageException &ex) {
     // if we were interrupted, the failed fetch is fine, just return kOfxStatOK
-    // otherwise, something wierd happened
+    // otherwise, something weird happened
     if(!gEffectHost->abort(effect)) {
       status = kOfxStatFailed;
     }
@@ -504,7 +504,7 @@ describe(OfxImageEffectHandle  effect)
   gPropHost->propGetDimension(gHost->host, kOfxImageEffectPropSupportedPixelDepths, &nHostDepths);
 
   // If the host cannot support multiple bit depths on in and out clips or it only supports 1 bit depth
-  // we cant do any work, so refuse to load and explain why.
+  // we can't do any work, so refuse to load and explain why.
   if(!hostSupportsMultipleDepths || nHostDepths == 1) {
     // post a message
     // - disabled, because posting a message within describe() crashes Nuke 6
@@ -520,7 +520,7 @@ describe(OfxImageEffectHandle  effect)
   OfxPropertySetHandle effectProps;
   gEffectHost->getPropertySet(effect, &effectProps);
 
-  // We can render both fields in a fielded image in one hit as there is no animation and no spatially dependant parameters
+  // We can render both fields in a fielded image in one hit as there is no animation and no spatially dependent parameters
   gPropHost->propSetInt(effectProps, kOfxImageEffectPluginPropFieldRenderTwiceAlways, 0, 0);
 
   // say we can support multiple pixel depths on in and out

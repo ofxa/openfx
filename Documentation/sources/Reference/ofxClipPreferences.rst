@@ -21,7 +21,7 @@ clip, some on both. These are...
 -  the fielding of the output clip,
 -  the premultiplication state of the output clip,
 -  whether the output clip varys from frame to frame, even if no
-   paramerters or input images change over time,
+   parameters or input images change over time,
 -  whether the output clip can be sampled at sub-frame times and produce
    different images.
 
@@ -205,7 +205,7 @@ The
 host property indicates if a plugin is able to change the fielding of
 the output clip from the default.
 
-The default value of the output clip's fielding is host dependant, but
+The default value of the output clip's fielding is host dependent, but
 in general,
 
 -  if any of the input clips are fielded, so will the output clip
@@ -229,7 +229,7 @@ The
 host property indicates if a plugin is able to change the frame rate of
 the output clip from the default.
 
-The default value of the output clip's frame rate is host dependant, but
+The default value of the output clip's frame rate is host dependent, but
 in general, it will be based on the input clips frame rates.
 
 If the host allows a plugin to specify the frame rate of the output
@@ -250,7 +250,7 @@ frames on output.
        FIELDED SOURCE      0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 ....
        DEINTELACED OUTPUT  0   1   2   3   4   5   6   7   8   9 
 
-The maping of the number of output frames is...
+The mapping of the number of output frames is...
 
 ::
 

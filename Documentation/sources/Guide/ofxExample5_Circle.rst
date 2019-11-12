@@ -392,7 +392,7 @@ function now has an extra conditional in there….
         }
         ...
 
-Note that we dont trap this on hosts that aren’t multi-resolution, as by
+Note that we don't trap this on hosts that aren’t multi-resolution, as by
 definition on those hosts RoDs are fixed.
 
 The code for the action itself is quite simple:

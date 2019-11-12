@@ -58,7 +58,7 @@ ofxuIsUnPremultiplied(OfxImageClipHandle clipHandle)
 }
 
 
-// Convinience wrapper to check for connection of a clip
+// Convenience wrapper to check for connection of a clip
 inline bool
 ofxuIsClipConnected(OfxImageEffectHandle pluginInstance, const char *clipName)
 {

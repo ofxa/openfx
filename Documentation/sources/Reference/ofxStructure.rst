@@ -22,7 +22,7 @@ link against.
 
 Hosts rely on two symbols within a plug-in, all other communication is
 boot strapped from those two symbols. The plug-in has no symbolic
-dependancies from the host. This minimal symbolic dependancy allows for
+dependencies from the host. This minimal symbolic dependency allows for
 run-time determination of what features to provide over the API, making
 implementation much more flexible and less prone to backwards
 compatibility problems.
@@ -62,8 +62,8 @@ Various suites and actions have been defined for the OFX image effect
 API, however many are actually quite generic and could be reused by
 other APIs. The property suite definitely has to be used by all other
 APIs, while the memory allocation suite, the parameter suite and several
-others would propably be useful for all other APIs. For example the
-paramter suite could be re-used to specify user visible parameters to
+others would probably be useful for all other APIs. For example the
+parameter suite could be re-used to specify user visible parameters to
 the other APIs.
 
 Several types are common to all OFX APIs, and as such are defined in
@@ -78,7 +78,7 @@ allows the implementation of the object to be hidden from the plug-in.
 
 *  :ref:`OfxStatus<statusCodes>`
 
-   Used to define a set of status codes indicating the sucess or
+   Used to define a set of status codes indicating the success or
    failure of an action or suite function
    
 *  :ref:`OfxHost<OfxHost>`
@@ -122,7 +122,7 @@ The OFX Image Effect API.
 
 The OFX Image Effect Plug-in API is designed for image effect plug-ins
 for 2D visual effects. This includes such host applications as
-compositors, editors, rotoscoping tools and colour grading sytems.
+compositors, editors, rotoscoping tools and colour grading systems.
 
 At heart the image effect API allows a host to send a plug-in a set of
 images, state the value of a set of parameters and get a resulting image

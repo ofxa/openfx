@@ -4,7 +4,7 @@ Status Codes
 ============
 
 Status codes are returned by most functions in OFX suites and all
-plug-in actions to indicate the sucess or failure of the operation. All
+plug-in actions to indicate the success or failure of the operation. All
 status codes are defined in `ofxCore.h <https://github.com/ofxa/openfx/blob/master/include/ofxCore.h>`_ and 
 *#defined* to be integers.
 

@@ -5,7 +5,7 @@ The following examples should be added to the guide.
 
 OpenGL Overlay Example
 ======================
-A trival example along the lines of the circle drawing example.
+A trivial example along the lines of the circle drawing example.
 
 This will illustrate...
     - openGL overlays
@@ -45,7 +45,7 @@ This will illustrate...
 
 Analysis Plugin
 ===============
-The plugin will find the minumum and maximum value of a given frame in response to a push button, and store the values
+The plugin will find the minimum and maximum value of a given frame in response to a push button, and store the values
 into two parameters. During renders it will rescale pixel values so that 'min' is 0 and 'max' is the whitepoint.
 
 This will illustrate...

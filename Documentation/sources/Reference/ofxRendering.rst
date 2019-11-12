@@ -94,7 +94,7 @@ Indicating that any instance of a plugin can have multiple renders running simul
 
 .. ImageEffectsSMPRendering:
 
-Rendering in a Symetric Multi Processing Enviroment
+Rendering in a Symmetric Multi Processing Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When rendering on computers that have more that once CPU (or this
@@ -138,7 +138,7 @@ single instance.
 
 Other plugins are able to render correctly when called in an arbitrary
 frame order, but render much more efficiently if rendered in order. For
-example a particle system which mantains the state of the particle
+example a particle system which maintains the state of the particle
 system in an instance would simply increment the simulation by a frame
 if rendering in-order, but would need to restart the particle system
 from scratch if the frame jumped backwards.
@@ -163,7 +163,7 @@ For plug-ins this can be one of three values...
 -  1, in which case the host must render an instance on a single
    computer over it's entire frame range, from first to last.
 -  2, in which case the effect is more efficiently rendered in frame
-   order, but can compute the correct result irregardless of render
+   order, but can compute the correct result regardless of render
    order.
 
 For hosts, this property takes three values...
@@ -202,7 +202,7 @@ must support fast scrubbing. These allow a plug-in to take short-cuts
 for improved performance when the situation allows and it makes sense,
 for example to generate thumbnails with effects applied. For example
 switch to a cheaper interpolation type or rendering mode. A plugin
-should expect frames rendered in this manner that will not be stucked in
+should expect frames rendered in this manner that will not be stuck in
 host cache unless the cache is only used in the same draft situations.
 
 .. _ImageEffectsFieldRendering:
@@ -237,11 +237,11 @@ The material is unfielded
 
 .. doxygendefine:: kOfxImageFieldLower
 
-The material is fielded, with scan line 0,2,4.... occuring first in a frame
+The material is fielded, with scan line 0,2,4.... occurring first in a frame
 
 .. doxygendefine:: kOfxImageFieldUpper
 
-The material is fielded, with scan line 1,3,5.... occuring first in a frame
+The material is fielded, with scan line 1,3,5.... occurring first in a frame
 
 Images extracted from a clip flag what their fieldedness is with the
 property :c:macro:`kOfxImagePropField`, this can
@@ -368,7 +368,7 @@ Any host with an interface will most likely have an interactive thread
 and a rendering thread. This allows an effect to be manipulated while
 having renders batched off to a background thread. This will mean that
 some degree of locking will go on to prevent simultaneous read/writes
-occuring, see :ref:`this section <ImageEffectsThreadSafety>` for more on thread safety.
+occurring, see :ref:`this section <ImageEffectsThreadSafety>` for more on thread safety.
 
 A host may need to abort a backgrounded render, typically in response to
 a user changing a parameter value. An effect should occasionally poll

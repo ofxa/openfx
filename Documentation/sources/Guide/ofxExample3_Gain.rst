@@ -97,7 +97,7 @@ looks like:
         suite = (SUITE *) gHost->fetchSuite(gHost->host, suiteName, suiteVersion);
         if(!suite) {
           ERROR_ABORT_IF(suite == NULL,
-                         "Failed to fetch %s verison %d from the host.",
+                         "Failed to fetch %s version %d from the host.",
                          suiteName,
                          suiteVersion);
         }
@@ -228,7 +228,7 @@ value, so the parameter should not be clamped to any upper value ever.
 
 Numbers are often manipulated with sliders widgets in user interfaces,
 and it is useful to set a range on those sliders. Which is exactly what
-we are doing here. This is distinct to the logical mimimum and maximum
+we are doing here. This is distinct to the logical minimum and maximum
 values, so you can set a *useful* range for the UI, but still allow the
 values to be outside that range. So here a slider would only allow
 values between 0.0 and 10.0 for our gain param, but the parameter could
@@ -462,7 +462,7 @@ The param get value functions use var-args to return values to plugins,
 similar to a C scanf function.
 
 And finally here is a snippet of the templated pixel pushing code where
-we do the actuall processing using our parameter values;
+we do the actual processing using our parameter values;
 
 `gain.cpp <https://github.com/ofxa/openfx/blob/doc/Documentation/sources/Guide/Code/Example3/gain.cpp#L437>`_
 

@@ -22,7 +22,7 @@ namespace OFX {
     return gLogFileName;
   }
 
-  /** @brief Opens the log file, returns whether this was sucessful or not. */
+  /** @brief Opens the log file, returns whether this was successful or not. */
   bool
   logOpenFile(void)
   {

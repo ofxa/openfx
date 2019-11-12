@@ -107,7 +107,7 @@ Properties affecting custom interacts for parameters are...
 -  :c:macro:`kOfxParamPropInteractMinimumSize`
 -  :c:macro:`kOfxParamPropInteractPreferedSize`
 
-The viewport for such interacts will be dependant upon the various
+The viewport for such interacts will be dependent upon the various
 properties above, and possibly a per host override in any XML resource
 file.
 

@@ -232,7 +232,7 @@ listed below.
 
 :c:macro:`kOfxImageComponentRGB` Each pixel has three samples, corresponding to Red, Green and Blue. Packed as RGB.
 
-:c:macro:`kOfxImageComponentAlpha` Each pixel has one sample, generally interpretted as an Alpha value.
+:c:macro:`kOfxImageComponentAlpha` Each pixel has one sample, generally interpreted as an Alpha value.
 
 .. note::
 
@@ -508,7 +508,7 @@ written to.
 
 The output image (which will be fetched later on) will have a **bounds**
 that are at least as big as the render window. The bounds of the output
-image could infact be larger. This could happen if a host is
+image could in fact be larger. This could happen if a host is
 simultaneously calling the render action in separate threads to perform
 symmetric multi-processing, each thread would be given a different
 render window to fill in of the larger output image.

@@ -13,7 +13,7 @@ namespace OFX {
   /** @brief Gets the name of the log file. */
   const std::string & logGetFileName();
 
-  /** @brief Opens the log file, returns whether this was sucessful or not. */
+  /** @brief Opens the log file, returns whether this was successful or not. */
   bool logOpenFile(void);
 
   /** @brief Closes the log file. */

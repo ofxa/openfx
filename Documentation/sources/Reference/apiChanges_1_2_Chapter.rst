@@ -14,7 +14,7 @@ plugin written to an earlier API.
 Packaging
 ---------
 
-A new architecture directory was added to the bundle heirarchy to
+A new architecture directory was added to the bundle hierarchy to
 specifically contain Mac OSX 64 bit builds. The current 'MacOS'
 architecture is a fall back for 32 bit only and/or universal binary
 builds.
@@ -71,7 +71,7 @@ New Syncing Property
 A new property has been added to parameter sets,
 :c:macro:`kOfxPropParamSetNeedsSyncing`. This
 is used by plugins with internal data structures that need syncing back
-to parameters for persistance and so on. This property should be set
+to parameters for persistence and so on. This property should be set
 whenever the plugin changes it's internal state to inform the host that
 a sync will be required before the next serialisation of the plugin.
 Without this property, the host would have to continually force the
@@ -89,7 +89,7 @@ plugin would prefer to be sequentially rendered if possible, but need
 not be.
 
 The :c:macro:`kOfxImageEffectInstancePropSequentialRender`
-propery has also been added to the host descriptor, to indicate whether
+property has also been added to the host descriptor, to indicate whether
 the host can support sequential rendering.
 
 The new property :c:macro:`kOfxImageEffectPropSequentialRenderStatus`
@@ -128,7 +128,7 @@ co-ordinate system.
 
 With 1.2 new :ref:`spatial double
 parameter <ParameterPropertiesDoubleTypesSpatial>` types are defined.
-These have their values manipulated in cannonical coordinates, however,
+These have their values manipulated in canonical coordinates, however,
 they have an option to specify their default values in a normalise
 coordinate system. These are....
 

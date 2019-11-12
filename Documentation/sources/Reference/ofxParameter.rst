@@ -9,7 +9,7 @@ behaviour, the radius of a circle drawer, the frequencies to filter out
 of an audio signal, the colour of a lens flare and so on.
 
 Seeing as hosts already provide for the general management of their own
-native parameters (eg: persistance, interface, animation etc...), it
+native parameters (eg: persistence, interface, animation etc...), it
 would make no sense to force plug-ins to do this all themselves.
 
 The OFX Parameters Suite is the means by which parameters are defined
@@ -39,7 +39,7 @@ readable, various properties are provided to set the user visible labels
 on the param.
 
 All parameters hold properties, though the exact set of properties on a
-parameter is dependant on the type of the parameter.
+parameter is dependent on the type of the parameter.
 
 A parameter's handle comes in two slightly different flavours. The
 handle returned inside a plugin's describe action is not an actual
@@ -53,7 +53,7 @@ The handle returned by
 :cpp:func:`OfxParameterSuiteV1::paramGetHandle`
 outside of a describe action will be a working instance of a parameter,
 you can still set (some) properties of the parameter, and all the
-get/set value functions are now useable.
+get/set value functions are now usable.
 
 .. _parameterTypes:
 
@@ -453,22 +453,22 @@ Rather than have many undo events appear on the undo stack for each
 individual parameter change, the effect groups them via the
 paramEditBegin/paramEditEnd and gets a single undo event. The 'preset'
 parameter would also not want to be undoable as it such an event is
-redunant. Note that as the 'preset' has been changed it will be sent
+redundant. Note that as the 'preset' has been changed it will be sent
 another instance changed action, however it will have a reason of
 :c:macro:`kOfxChangePluginEdited`, which it ignores and so stops an infinite
-loop occuring.
+loop occurring.
 
 .. ParametersXML:
 
 XML Resource Specification for Parameters
 -----------------------------------------
 
-Parameters can have various properties overriden via a seperate XML
+Parameters can have various properties overridden via a separate XML
 based resource file.
 
 .. ParametersPersistance:
 
-Parameter Persistance
+Parameter Persistence
 ---------------------
 
 All parameters flagged with the
@@ -487,7 +487,7 @@ When an host loads a set up it should do so in the following manner...
    should be used.
 3. creates an instance of that plugin with its set of parameters.
 4. sets all those parameters to the defaults specified by the plugin.
-5. examines the setup for any persistant parameters, then sets the
+5. examines the setup for any persistent parameters, then sets the
    instance's parameters to any found in it.
 6. calls create instance on the plugin.
 
@@ -589,7 +589,7 @@ Plain Double Parameters
 
 Double parameters with their
 :c:macro:`kOfxParamPropDoubleType` property set
-to :c:macro:`kOfxParamDoubleTypePlain` are uninterpretted. The values
+to :c:macro:`kOfxParamDoubleTypePlain` are uninterpreted. The values
 represented to the user are what is reported back to the effect when
 values are retrieved. 1, 2 and 3D parameters can be flagged as
 :c:macro:`kOfxParamDoubleTypePlain`, which is the default.
@@ -604,7 +604,7 @@ Angle Double Parameters
 
 Double parameters with their
 :c:macro:`kOfxParamPropDoubleType` property set
-to :c:macro:`kOfxParamDoubleTypeAngle` are interpretted as angles. The host
+to :c:macro:`kOfxParamDoubleTypeAngle` are interpreted as angles. The host
 could use some fancy angle widget in it's interface, representing
 degrees, angles mils whatever. However, the values returned to a plugin
 are always in degrees. Applicable to 1, 2 and 3D parameters.
@@ -618,7 +618,7 @@ Scale Double Parameters
 
 Double parameters with their
 :c:macro:`kOfxParamPropDoubleType` property set
-to :c:macro:`kOfxParamDoubleTypeScale` are interpretted as scale factors. The
+to :c:macro:`kOfxParamDoubleTypeScale` are interpreted as scale factors. The
 host can represent these as 1..100 percentages, 0..1 scale factors,
 fractions or whatever is appropriate for its interface. However, the
 plugin sees these as a straight scale factor, in the 0..1 range.
@@ -634,8 +634,8 @@ Time Double Parameters
 
 Double parameters with their
 :c:macro:`kOfxParamPropDoubleType` property set
-to :c:macro:`kOfxParamDoubleTypeTime` are interpretted as a time. The host can
-represent these as frames, seconds, milliseconds, millenia or whatever
+to :c:macro:`kOfxParamDoubleTypeTime` are interpreted as a time. The host can
+represent these as frames, seconds, milliseconds, millennia or whatever
 it feels is appropriate. However, a visual effect plugin sees such
 values in 'frames'. Applicable only to 1D double parameters. It is an
 error to set this on any other type of double parameter.
@@ -650,9 +650,9 @@ Absolute Time Double Parameters
 
 Double parameters with their
 :c:macro:`kOfxParamPropDoubleType` property set
-to :c:macro:`kOfxParamDoubleTypeAbsoluteTime` are interpretted as an absolute
-time from the begining of the effect. The host can represent these as
-frames, seconds, milliseconds, millenia or whatever it feels is
+to :c:macro:`kOfxParamDoubleTypeAbsoluteTime` are interpreted as an absolute
+time from the beginning of the effect. The host can represent these as
+frames, seconds, milliseconds, millennia or whatever it feels is
 appropriate. However, a plugin sees such values in 'frames' from the
 beginning of a clip. Applicable only to 1D double parameters. It is an
 error to set this on any other type of double parameter.
@@ -668,7 +668,7 @@ Spatial Parameters
 Parameters that can represent a size or position are essential. To that
 end there are several values of the
 :c:macro:`kOfxParamPropDoubleType` that say it
-should be interpretted as a size or position, in either one or two
+should be interpreted as a size or position, in either one or two
 dimensions.
 
 The original OFX API only specified
@@ -694,7 +694,7 @@ Spatial Double Parameters
 These parameter types represent a size or position in one or two
 dimensions in :ref:`Canonical Coordinate <CanonicalCoordinates>`. The host
 and plug-in get and set values in this coordinate system. Scaling to
-:ref:`Pixel Coordinate <PixelCoordinates>` is the reponsibility of the
+:ref:`Pixel Coordinate <PixelCoordinates>` is the responsibility of the
 effect.
 
 The default value of a spatial parameter can be set in either a
@@ -733,7 +733,7 @@ available.
 
 There are several values of the
 :c:macro:`kOfxParamPropDoubleType` that say it
-should be interpretted as a size or position. These are expressed and
+should be interpreted as a size or position. These are expressed and
 proportional to the current project's size. This will allow the
 parameter to scale cleanly with project size changes and to be
 represented to the user in an appropriate range.
@@ -765,7 +765,7 @@ Parameters can choose to be normalised in several ways...
    position on the image plane.
 
 See the section on :ref:`coordinate systems <CoordinateSystems>` on how to
-scale between normalised, cannonical and pixel coordinates.
+scale between normalised, canonical and pixel coordinates.
 
 .. ParameterPropertiesDoubleTypesDefaultsAndAll:
 
@@ -776,7 +776,7 @@ In all cases double parameters' defaults, minimums and maximums are
 specified in the same space as the parameter, as is the increment in all
 cases but normalised parameters.
 
-Normalised parameters specify thier increments in cannonical
+Normalised parameters specify their increments in canonical
 coordinates, rather than in normalised coordinates. So an increment of
 '1' means 1 pixel, not '1 project width', otherwise sliders would be a
 bit wild.
@@ -791,7 +791,7 @@ Parametric Parameters
 Introduction
 ^^^^^^^^^^^^
 
-Parametric params are new for 1.2 and are optinally supported by host
+Parametric params are new for 1.2 and are optionally supported by host
 applications. They are specified via the :c:macro:`kOfxParamTypeParametric`
 identifier passed into
 :cpp:func:`OfxParameterSuiteV1::paramDefine`
@@ -869,7 +869,7 @@ property
 Getting and Setting Values on a Parametric Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Seeing as we need to pass in the parametric position and dimenstion to
+Seeing as we need to pass in the parametric position and dimension to
 evaluate, parametric parameters need a new evaluation mechanism. They do
 this with the
 :cpp:func:`OfxParametricParameterSuiteV1::parametricParamGetValue` function.

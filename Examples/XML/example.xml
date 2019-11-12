@@ -16,7 +16,7 @@ Bruno Nicoletti
 <OfxPlugin name="someplugin">
 
   <!--
-    Define the resouces overrides to be used for the host 'someHost' in the locale 'someLocale'
+    Define the resources overrides to be used for the host 'someHost' in the locale 'someLocale'
    -->
   <OfxResourceSet ofxHost="someHost" ofxLocale="someLocale">
 

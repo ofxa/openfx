@@ -15,7 +15,7 @@ The current examples are all written in C++ and are...
 	         respond to user interaction.
      - Overlay - shows how to draw a simple overlay widget using the OFX Interact
                  API.
-     - Custom  - shows how custom paramters work within the API, it also uses the
+     - Custom  - shows how custom parameters work within the API, it also uses the
 	         OFX Interact API.
      - DepthConverter - shows how to deal with pixel preferences.
      - Rectangle - example generator and filter that shows how to deal with spatial

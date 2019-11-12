@@ -69,7 +69,7 @@ for both double and integer rects. Hosts and plug-ins need to be
 infinite RoD aware. Hosts need to clip such RoDs to an appropriate
 rectangle, typically the project extent. Plug-ins need to check for
 infinite RoDs when asking input clips for them and to pass them through
-unless they explictly clamp them. To indicate an infinite RoD set it as
+unless they explicitly clamp them. To indicate an infinite RoD set it as
 indicated in the following code snippet.
 
     ::
@@ -175,7 +175,7 @@ but always pass around full RoD images, never tiles.
 
 The simplest systems, don't have any of of the above complexity. The
 RoDs, RoIs, images and project sizes in such systems are exactly the
-same, always. Often these are editting, as opposed to compositing,
+same, always. Often these are editing, as opposed to compositing,
 systems.
 
 Similarly, some plugin effects cannot handle sub RoD images, or even
@@ -184,7 +184,7 @@ images not rooted at the origin.
 The OFX architecture is meant to support all of them. Assuming a plugin
 supports the most general architecture, it will trivially run on hosts
 with simpler architectures. However, if a plugin does not support tiled,
-or arbitarily positioned images, they may not run cleanly on hosts that
+or arbitrarily positioned images, they may not run cleanly on hosts that
 expect them to do so.
 
 To this end, two properties are provided that flag the capabilities of a

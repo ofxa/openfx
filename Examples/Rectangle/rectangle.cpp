@@ -98,7 +98,7 @@ struct MyInstanceData {
 /* mandatory function to set up the host structures */
 
 
-// Convinience wrapper to get private data 
+// Convenience wrapper to get private data 
 static MyInstanceData *
 getMyInstanceData(OfxImageEffectHandle effect)
 {
@@ -166,7 +166,7 @@ destroyInstance(OfxImageEffectHandle effect)
   return kOfxStatOK;
 }
 
-// function that gets the corners params in the cannonical coordinate system
+// function that gets the corners params in the canonical coordinate system
 static void
 getCannonicalRect(OfxImageEffectHandle effect, double time, OfxRectD &rect)
 {
@@ -194,7 +194,7 @@ getSpatialRoD(OfxImageEffectHandle effect, OfxPropertySetHandle inArgs, OfxPrope
   OfxTime time;
   gPropHost->propGetDouble(inArgs, kOfxPropTime, 0, &time);
 
-  // get my rectangle in cannonical coords, which is my rod
+  // get my rectangle in canonical coords, which is my rod
   OfxRectD rod;
   getCannonicalRect(effect, time, rod);
 
@@ -272,7 +272,7 @@ isIdentity(OfxImageEffectHandle effect,
     gPropHost->propGetDouble(inArgs, kOfxPropTime, 0, &time);
     gPropHost->propGetIntN(inArgs, kOfxImageEffectPropRenderWindow, 4, &renderWindow.x1);
 
-    // get my rectangle in cannonical coords
+    // get my rectangle in canonical coords
     OfxRectD rect;
     getCannonicalRect(effect, time, rect);
 
@@ -651,7 +651,7 @@ static OfxStatus render(OfxImageEffectHandle effect,
     double pixelAspectRatio;
     gPropHost->propGetDouble(outputImg, kOfxImagePropPixelAspectRatio, 0, &pixelAspectRatio);
 
-    // get the rect in cannonical coordinates  
+    // get the rect in canonical coordinates  
     OfxRectD rect;
     getCannonicalRect(effect, time, rect);
   
@@ -730,7 +730,7 @@ static OfxStatus render(OfxImageEffectHandle effect,
   }
   catch(OfxuNoImageException &ex) {
     // if we were interrupted, the failed fetch is fine, just return kOfxStatOK
-    // otherwise, something wierd happened
+    // otherwise, something weird happened
     if(!gEffectHost->abort(effect)) {
       status = kOfxStatFailed;
     }

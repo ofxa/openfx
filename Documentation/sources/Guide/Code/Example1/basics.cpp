@@ -105,7 +105,7 @@ namespace {
 
 
   ////////////////////////////////////////////////////////////////////////////////
-  // House keeper to make sure we are loaded and unloaded symetrically
+  // House keeper to make sure we are loaded and unloaded symmetrically
   bool gInLoadedState = false;
   bool gDescribeCalled = false;
   bool gDescribeInContextCalled = false;
@@ -120,7 +120,7 @@ namespace {
 
     /// now fetch a suite out of the host via it's fetch suite function.
     gPropertySuite = (OfxPropertySuiteV1 *) gHost->fetchSuite(gHost->host, kOfxPropertySuite, 1);
-    ERROR_ABORT_IF(gPropertySuite == 0, "Failed to fetch the " kOfxPropertySuite " verison 1 from the host.");
+    ERROR_ABORT_IF(gPropertySuite == 0, "Failed to fetch the " kOfxPropertySuite " version 1 from the host.");
 
     gImageEffectSuite = (OfxImageEffectSuiteV1 *) gHost->fetchSuite(gHost->host, kOfxImageEffectSuite, 1);
 

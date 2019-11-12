@@ -451,7 +451,7 @@ action is called. In our example plugin, the unload does nothing.
 
     Hosts should always pair the :c:macro:`kOfxActionLoad` with a :c:macro:`kOfxActionUnload`,
     otherwise all sorts of badness can happen, including memory leaks,
-    failing license checks and more. There is one excpetion to this,
+    failing license checks and more. There is one exception to this,
     which is if a plugin encounters an error during the load action and
     returns an error state. In this case only, the plugin *must* clean
     up before it returns, and , the balancing unload action is *not*

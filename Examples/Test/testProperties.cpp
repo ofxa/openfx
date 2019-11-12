@@ -31,7 +31,7 @@
 /** @file testProperties.cpp Ofx host testing plug-in which logs all the needed properties
     
 the log file is being written with ';' ending lines and execution blocks surrounded by { } pairs, so if you
-run it through a c beautifier or emacs auto formating, automagic indenting will occur.
+run it through a c beautifier or emacs auto formatting, automagic indenting will occur.
 */
 #include <string> // stl strings
 #include <map> // stl maps
@@ -107,7 +107,7 @@ public :
   OfxStatus propGetN(const char *property, double *values, int N) const;
   OfxStatus propGetN(const char *property, std::string *values, int N) const;
   
-  // these check for existance and dimensionality
+  // these check for existence and dimensionality
   OfxStatus propGetDimension(const char *property, int &size) const;
   
   // inc/dec the log flag to enable/disable ordinary message logging
@@ -836,7 +836,7 @@ HostDescription::HostDescription(OfxPropertySetHandle handle) :
 {
   OFX::logPrint("HostDescription::HostDescription - start ( fetching host description);\n{");
   
-  // do basic existance checking with a PropertySetDescription
+  // do basic existence checking with a PropertySetDescription
   PropertySetDescription hostPropSet("Host", handle, gHostPropDescription, sizeof(gHostPropDescription)/sizeof(PropertyDescription));
   hostPropSet.checkProperties();
   hostPropSet.checkDefaults();
@@ -1295,7 +1295,7 @@ OfxGetNumberOfPlugins(void)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// globals desctructor, the destructor is called when the plugin is unloaded
+// globals destructor, the destructor is called when the plugin is unloaded
 class GlobalDestructor {
 public :
   ~GlobalDestructor();

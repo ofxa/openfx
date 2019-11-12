@@ -161,7 +161,7 @@ static OfxStatus render(OfxImageEffectHandle  instance,
   }
   catch(NoImageEx &) {
     // if we were interrupted, the failed fetch is fine, just return kOfxStatOK
-    // otherwise, something wierd happened
+    // otherwise, something weird happened
     if(!gEffectHost->abort(instance)) {
       status = kOfxStatFailed;
     }      

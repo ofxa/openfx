@@ -103,7 +103,7 @@ if otool -L "$binary"  | fgrep libMagick > /dev/null; then
     IMAGEMAGICKMAJ=${IMAGEMAGICKVER%.*.*}
     IMAGEMAGICKLIB=`pkg-config --variable=libdir ImageMagick`
     IMAGEMAGICKSHARE=`pkg-config --variable=prefix ImageMagick`/share
-    # if I get this right, sed substitutes in the exe the occurences of IMAGEMAGICKVER
+    # if I get this right, sed substitutes in the exe the occurrences of IMAGEMAGICKVER
     # into the actual value retrieved from the package.
     # We don't need this because we use MAGICKCORE_PACKAGE_VERSION declared in the <magick/magick-config.h>
     # sed -e "s,IMAGEMAGICKVER,$IMAGEMAGICKVER,g" -i "" $pkgbin/DisparityKillerM

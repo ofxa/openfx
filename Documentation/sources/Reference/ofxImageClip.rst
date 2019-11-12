@@ -66,7 +66,7 @@ t he bounds are the actual addressable pixels present in an image. This
 allows for tiled rendering an so on.
 
 Clips have a frame rate, which is the number of frames per second they
-are to be displayed at. Some clips may be continously samplable (for
+are to be displayed at. Some clips may be continuously samplable (for
 example, if they are connected to animating geometry that can be
 rendered at arbitrary times), if this is so, the frame rate for these
 clips is set to 0.
@@ -87,7 +87,7 @@ define the clips mandated for that context, it can also define extra
 clips that it may need for that context. It does this using the
 :cpp:func`OfxImageEffectSuiteV1::clipDefine`
 function, the property handle returned by this function is purely for
-definition purposes only. It has not persistance outside the describe in
+definition purposes only. It has not persistence outside the describe in
 context action and is distinct to the clip property handles used by
 instances. The *name* parameter is how you can later access that clip in
 a plugin instance via the
@@ -143,7 +143,7 @@ Images are fetched from a clip via the
 :cpp:func:`OfxImageEffectSuiteV1::clipGetImage`
 function. This takes a time and an optional region to extract an image
 at from a given clip. This returns, in a property handle, an image
-fetched from the clip at a specfic time. The handle contains all the
+fetched from the clip at a specific time. The handle contains all the
 information relevant to dealing with that image.
 
 Once fetched, an image must be released via the

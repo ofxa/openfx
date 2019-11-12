@@ -13,8 +13,8 @@ from two categories...
    `ofxImageEffect.h <https://github.com/ofxa/openfx/blob/master/include/ofxImageEffect.h>`_
 
 For generic actions, the ``handle`` passed to to main entry point will
-depend on the API being impemented, for all generic actions passed to an
-OFX Image Effect plug-in, it will nearly alway be an
+depend on the API being implemented, for all generic actions passed to an
+OFX Image Effect plug-in, it will nearly always be an
 :cpp:class:`OfxImageEffectHandle`.
 
 Because interacts are a special case, they are dealt with in a separate

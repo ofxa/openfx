@@ -12,7 +12,7 @@ OFX Include Files
 
 The *C* include files that define an OFX API are all that are needed by
 a plug-in or host to implement the API. Most include files define a set
-of independant *suites* which are used by a plug-in to communicate with
+of independent *suites* which are used by a plug-in to communicate with
 a host application.
 
 There are two include files that are used with nearly every derived API.
@@ -62,7 +62,7 @@ signature for the main entry point is
 .. doxygentypedef:: OfxPluginEntryPoint
 
 
-The :ref:`OfxStatus<statusCodes>` value returned is dependant upon the action being
+The :ref:`OfxStatus<statusCodes>` value returned is dependent upon the action being
 called, however the value :c:macro:`kOfxStatReplyDefault` is returned if the
 plug-in does not trap the action.
 
@@ -79,8 +79,8 @@ host needs to implement is defined by the API being implemented. A suite
 is fetched from a host via the :cpp:func:`OfxHost::fetchSuite` function. This
 returns a pointer (cast to ``void *``) to the named and versioned set of
 functions. By using this suite fetching mechanism, there is no symbolic
-dependancy from the plug-in to the host, and APIs can be easily
-expandable without causing backwards compatability issues.
+dependency from the plug-in to the host, and APIs can be easily
+expandable without causing backwards compatibility issues.
 
 If the host does not implement a requested suite, or the requested
 version of that suite, then it should return NULL.
@@ -128,7 +128,7 @@ one of the following...
 
 Label strings are considered to be static constant strings. When passed
 across the API the host/plug-in receiving the string neither needs to
-duplicate nor free the string, it can simply retain the orginal pointer
+duplicate nor free the string, it can simply retain the original pointer
 passed over and use that in future, as it will not change. A host must
 be aware that when it unloads a plug-in all such pointers will be
 invalid, and be prepared to cope with such a situation.

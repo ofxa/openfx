@@ -63,7 +63,7 @@ one. You should work through them one by one as each will build on the
 one before.
 
 For completeness and clarity of explanation, each plugin is entirely
-self contained and has no dependancy on anything other than standard C
+self contained and has no dependency on anything other than standard C
 and C++ libraries and the OFX headers.
 
 -  :ref:`The basic machinery of an OFX plugin. <basicExample>`

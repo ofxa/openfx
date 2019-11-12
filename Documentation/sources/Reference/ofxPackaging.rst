@@ -77,7 +77,7 @@ Where...
 -  ARCHITECTURE is the specific operating system architecture the
    plug-in was built for, these are currently...
 
-   -  MacOS - for Apple Macintosh OS X 32 bit and/or univeral binaries
+   -  MacOS - for Apple Macintosh OS X 32 bit and/or universal binaries
    -  MacOS-x86-64 - for Apple Macintosh OS X, specifically on intel x86
       CPUs running AMD's 64 bit extensions. 64 bit host applications
       should check this first, and if it doesn't exist or is empty, fall

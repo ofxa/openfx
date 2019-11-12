@@ -38,7 +38,7 @@ of inputs and the rules for certain behaviours are relaxed.
 So you’ve written your OFX effect, and it can work with a single input,
 but would ideally work much better with multiple inputs. You also want
 it to work as best it can across a range of host applications. If you
-could only write it as a multi-input generall effect with more than one
+could only write it as a multi-input general effect with more than one
 input, it couldn’t work in an editor. However if you wrote it as a
 single input effect, it wouldn’t work as well as it could in a node
 based compositor. Having your effect work in multiple contexts is the
@@ -84,7 +84,7 @@ behaviour just works and you don’t have to trap many other actions.
 
 In the case of the general context, the default behaviour might not work
 the way you want, and you may have to trap other actions. Fortunately
-the defaults work for us as wll.
+the defaults work for us as will.
 
 `saturation.cpp <https://github.com/ofxa/openfx/blob/doc/Documentation/sources/Guide/Code/Example4/saturation.cpp#388>`_
 
@@ -173,7 +173,7 @@ clip and call it "Mask". We then tell the host about that clip…
 
 -  secondly, that the clip is optional,
 
--  thirdly, that this clip is to be interpretted as a mask, so hosts
+-  thirdly, that this clip is to be interpreted as a mask, so hosts
    that manage such things separately, know it can be fed into this
    input.
 
@@ -262,7 +262,7 @@ mask input.
 We are again using instance data to cache away a set of handles to clips
 and params (the constructor of which sets them all to NULL). We are also
 recording which context we have had our instance created for by checking
-the :c:macro:`kOfxImageEffectPropContext` property of the efect. If it is a
+the :c:macro:`kOfxImageEffectPropContext` property of the effect. If it is a
 general context we also cache the *Mask* input in our instance data.
 Pretty easy.
 
@@ -363,7 +363,7 @@ we may be in the general context but the clip is not connected.
           bool isAborting = gImageEffectSuite->abort(instance);
 
           // if we were interrupted, the failed fetch is fine, just return kOfxStatOK
-          // otherwise, something wierd happened
+          // otherwise, something weird happened
           if(!isAborting) {
             status = kOfxStatFailed;
           }
@@ -465,7 +465,7 @@ this is not meant to be fast code, just illustrative.
 
 .. _a_bit_of_houskeeping:
 
-A Bit Of Houskeeping
+A Bit Of Housekeeping
 ====================
 
 You may have noticed I’ve gone and created an ``Image`` class. I got

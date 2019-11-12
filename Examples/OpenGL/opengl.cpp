@@ -117,7 +117,7 @@ struct MyInstanceData {
 /* mandatory function to set up the host structures */
 
 
-// Convinience wrapper to get private data
+// Convenience wrapper to get private data
 static MyInstanceData *
 getMyInstanceData( OfxImageEffectHandle effect)
 {
@@ -474,7 +474,7 @@ static OfxStatus render( OfxImageEffectHandle  instance,
   return status;
 }
 
-// convience function to define parameters
+// convenience function to define parameters
 static void
 defineParam( OfxParamSetHandle effectParams,
 	     const char *name,

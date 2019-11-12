@@ -20,7 +20,7 @@ has three spatial coordinate systems
 -  The Pixel Coordinate System
    which describes coordinates in addressable pixels
 -  The Normalised Canonical Coordinate System
-   which allows for resolution independant description of parameters
+   which allows for resolution independent description of parameters
 
 .. _CanonicalCoordinates:
 Canonical Coordinates
@@ -51,7 +51,7 @@ ratio of 1.067 and a scale factor of 0.5f. We call this the **Pixel
 Coordinate System**.
 
 The Pixel coordinate system is always referenced by integer values,
-generally via a OfxRectI structure. It is used when refering to
+generally via a OfxRectI structure. It is used when referring to
 operations on actual pixels, and so is how the bounds of images are
 described and the render window passed to the render action.
 
@@ -129,7 +129,7 @@ be in the bottom left hand corner, which is probably not the correct
 spot.
 
 To get around this, OFX allows parameters to be flagged as *normalised*,
-which is a resolution independant method of representing spatial
+which is a resolution independent method of representing spatial
 coordinates. In this coordinate system, a point expressed as (0.5, 0.5)
 will appear in the centre of the screen, always.
 
@@ -147,7 +147,7 @@ explanation. It involves three two dimensional values...
    a 16:9 PAL SD project
 
 As described above, the project extent is the section of the image plane
-that is coverred by an image that is the desired output of the project,
+that is covered by an image that is the desired output of the project,
 so for a PAL SD project you get an extent of 0,0 to 768,576. As the
 project is always rooted at the origin, so the extent is actually a
 size.
@@ -262,7 +262,7 @@ property can take are...
    position on the image plane, deprecated for 1.2.
 
 For example, we have an effect that draws a circle. It has two
-parameters a 1D double radius parametere and a 2D double position
+parameters a 1D double radius parameter and a 2D double position
 parameter. It would flag the radius to be
 :c:macro:`kOfxParamDoubleTypeNormalisedX`, fetch the value and scale that by
 the project size before we render the circle. The host should present
@@ -291,7 +291,7 @@ second being last the time at which the clip will generate data.
 
 Consider the example below, it is showing an effect of 10 frames
 duration applied to a clip lasting 20 frames. The first frame of the
-effect is infact the 5th frame of the clip. Both the input and output
+effect is in fact the 5th frame of the clip. Both the input and output
 have the same frame rate.
 
     ::

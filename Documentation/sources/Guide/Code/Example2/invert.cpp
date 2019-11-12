@@ -104,10 +104,10 @@ namespace {
   {
     /// now fetch a suite out of the host via it's fetch suite function.
     gPropertySuite = (OfxPropertySuiteV1 *) gHost->fetchSuite(gHost->host, kOfxPropertySuite, 1);
-    ERROR_ABORT_IF(gPropertySuite == 0, "Failed to fetch the " kOfxPropertySuite " verison 1 from the host.");
+    ERROR_ABORT_IF(gPropertySuite == 0, "Failed to fetch the " kOfxPropertySuite " version 1 from the host.");
 
     gImageEffectSuite = (OfxImageEffectSuiteV1 *) gHost->fetchSuite(gHost->host, kOfxImageEffectSuite, 1);
-    ERROR_ABORT_IF(gImageEffectSuite == 0, "Failed to fetch the " kOfxImageEffectSuite " verison 1 from the host.");
+    ERROR_ABORT_IF(gImageEffectSuite == 0, "Failed to fetch the " kOfxImageEffectSuite " version 1 from the host.");
 
     return kOfxStatOK;
   }
@@ -384,7 +384,7 @@ namespace {
       bool isAborting = gImageEffectSuite->abort(instance);
 
       // if we were interrupted, the failed fetch is fine, just return kOfxStatOK
-      // otherwise, something wierd happened
+      // otherwise, something weird happened
       if(!isAborting) {
         status = kOfxStatFailed;
       }

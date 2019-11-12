@@ -41,7 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     - basic plugin definition   
        - parameters
        - parameter hierarchy
-    - context dependant plugin definition
+    - context dependent plugin definition
     - instance creation and private instance data
     - multiple input clips
     - region of interest and region of definition
@@ -103,7 +103,7 @@ struct MyInstanceData {
 /* mandatory function to set up the host structures */
 
 
-// Convinience wrapper to get private data 
+// Convenience wrapper to get private data 
 static MyInstanceData *
 getMyInstanceData( OfxImageEffectHandle effect)
 {
@@ -118,7 +118,7 @@ getMyInstanceData( OfxImageEffectHandle effect)
   return myData;
 }
 
-// Convinience wrapper to set the enabledness of a parameter
+// Convenience wrapper to set the enabledness of a parameter
 static inline void
 setParamEnabledness( OfxImageEffectHandle effect,
                     const char *paramName,
@@ -136,7 +136,7 @@ setParamEnabledness( OfxImageEffectHandle effect,
   gPropHost->propSetInt(paramProps,  kOfxParamPropEnabled, 0, enabledState);
 }
 
-// function thats sets the enabledness of the percomponent scale parameters
+// function that sets the enabledness of the percomponent scale parameters
 // depending on the value of the 
 // This function is called when the 'scaleComponents' value is changed
 // or when the input clip has been changed
@@ -257,7 +257,7 @@ getSpatialRoD( OfxImageEffectHandle  effect,  OfxPropertySetHandle inArgs,  OfxP
   OfxRectD rod;
   gEffectHost->clipGetRegionOfDefinition(myData->sourceClip, time, &rod);
 
-  // note that the RoD is _not_ dependant on the Mask clip
+  // note that the RoD is _not_ dependent on the Mask clip
 
   // set the rod in the out args
   gPropHost->propSetDoubleN(outArgs, kOfxImageEffectPropRegionOfDefinition, 4, &rod.x1);
@@ -700,7 +700,7 @@ static OfxStatus render( OfxImageEffectHandle  instance,
       throw OfxuStatusException(kOfxStatErrImageFormat);
     }
 
-    // are we compenent scaling
+    // are we component scaling
     int scaleComponents;
     gParamHost->paramGetValueAtTime(myData->perComponentScaleParam, time, &scaleComponents);
 
@@ -786,7 +786,7 @@ static OfxStatus render( OfxImageEffectHandle  instance,
   }
   catch(OfxuNoImageException &ex) {
     // if we were interrupted, the failed fetch is fine, just return kOfxStatOK
-    // otherwise, something wierd happened
+    // otherwise, something weird happened
     if(!gEffectHost->abort(instance)) {
       status = kOfxStatFailed;
     }
@@ -806,7 +806,7 @@ static OfxStatus render( OfxImageEffectHandle  instance,
   return status;
 }
 
-// convience function to define scaling parameter
+// convenience function to define scaling parameter
 static void
 defineScaleParam( OfxParamSetHandle effectParams,
                  const char *name,

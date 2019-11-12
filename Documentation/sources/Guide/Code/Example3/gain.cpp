@@ -150,7 +150,7 @@ namespace {
     suite = (SUITE *) gHost->fetchSuite(gHost->host, suiteName, suiteVersion);
     if(!suite) {
       ERROR_ABORT_IF(suite == NULL,
-                     "Failed to fetch %s verison %d from the host.",
+                     "Failed to fetch %s version %d from the host.",
                      suiteName,
                      suiteVersion);
     }
@@ -569,7 +569,7 @@ namespace {
       bool isAborting = gImageEffectSuite->abort(instance);
 
       // if we were interrupted, the failed fetch is fine, just return kOfxStatOK
-      // otherwise, something wierd happened
+      // otherwise, something weird happened
       if(!isAborting) {
         status = kOfxStatFailed;
       }
