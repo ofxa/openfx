@@ -4,7 +4,7 @@
 /*
 Software License :
 
-Copyright (c) 2003-2015, The Open Effects Association Ltd. All rights reserved.
+Copyright (c) 2003-2019, The Open Effects Association Ltd. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -94,6 +94,10 @@ These strings are used to identify the type of the parameter when it is defined,
 #define kOfxParamTypePage "OfxParamTypePage"
 /** @brief String to identify a param as a PushButton parameter */
 #define kOfxParamTypePushButton "OfxParamTypePushButton"
+/** @brief String to identify a param as a layer indexer. This parameter did not exist in previous version of the API.  
+The purpose of this parameter is to logically locate in the effects controls the layer param indexer and is particularly useful for hosts that don't have other means to connect additional input clips to effects. 
+The "name" string value must match "name" string value of the optional input clip */
+#define kOfxParamTypeClip "OfxParamTypeClip"
 /*@}*/
 
 /**
