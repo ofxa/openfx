@@ -94,6 +94,9 @@ These strings are used to identify the type of the parameter when it is defined,
 #define kOfxParamTypePage "OfxParamTypePage"
 /** @brief String to identify a param as a PushButton parameter */
 #define kOfxParamTypePushButton "OfxParamTypePushButton"
+/** @brief String to identify a param as a Format parameter - 2 int representing Width and Height and a double representing PAR  */
+#define kOfxParamTypeFormat "OfxParamTypeFormat"
+
 /*@}*/
 
 /**
@@ -429,6 +432,7 @@ The exact type and dimension is dependant on the type of the parameter. These ar
   - ::kOfxParamTypeGroup - does not have this property
   - ::kOfxParamTypePage - does not have this property
   - ::kOfxParamTypePushButton - does not have this property
+  - ::kOfxParamTypeSpatialFormat - does not have this property, values queried via kOfxImageEffectImageFormatResolution
  */
 #define kOfxParamPropDefault "OfxParamPropDefault"
 

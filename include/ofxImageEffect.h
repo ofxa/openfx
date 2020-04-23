@@ -4,7 +4,7 @@
 /*
 Software License :
 
-Copyright (c) 2003-2015, The Open Effects Association Ltd. All rights reserved.
+Copyright (c) 2003-2019, The Open Effects Association Ltd. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -210,6 +210,33 @@ These are the list of actions passed to an image effect plugin's main function. 
 
  */
 #define kOfxImageEffectActionGetRegionsOfInterest         "OfxImageEffectActionGetRegionsOfInterest"
+
+
+/** @brief
+
+This action allows to compute the format of the output clip, 
+kOfxImageEffectActionGetImageFormat asks the effect to set the appropriate properties on the outArgs,
+kOfxImageEffectImageFormatResolution in pixel coordinates, kOfxImageEffectImageFormatAspectRatio
+ 
+See also:  kOfxImageEffectImageFormatResolution, kOfxImageEffectImageFormatAspectRatio, kOfxImageEffectPropGeneratorType and kOfxImageEffectPropSupportsImageFormat 
+
+The default is: 
+
+- the effective kOfxImageEffectPropProjectSize in pixel coordinates with no render scaled applied
+- kOfxImageEffectPropProjectPixelAspectRatio 
+
+\pre
+-  \ref kOfxActionCreateInstance has been called on the instance
+
+@returns
+-  \ref kOfxStatOK, the action was trapped and at least one RoI was set in the outArgs property set
+-  \ref kOfxStatReplyDefault, the action was not trapped and the host should use the default values
+-  \ref kOfxStatErrMemory, in which case the action may be called again after a memory purge
+-  \ref kOfxStatFailed, something wrong, but no error code appropriate, plugin to post message
+-  \ref kOfxStatErrFatal
+*/
+
+#define kOfxImageEffectActionGetImageFormat         "OfxImageEffectActionGetImageFormat"
 
 /** @brief
  This action allows a host to ask an effect what range of frames it can
@@ -842,6 +869,21 @@ Multiple resolution images mean...
 */
 #define kOfxImageEffectPropSupportsMultiResolution "OfxImageEffectPropSupportsMultiResolution"
 
+/** @brief Indicates whether a plugin or host support Image Reformatting
+- Type - int X 1
+- Property Set - host descriptor (read only), plugin descriptor (read/write), instance (read/write)
+- Default - 0 for plugins
+- Valid Values - This must be one of
+- 0 - the plugin or host does not support image formatting
+- 1 - the plugin or host does support image formatting
+
+If host and plugin supports image formatting then kOfxImageEffectActionGetImageFormat action is expected.
+This allows for example a plugin to not create an additional input to perform any image reformatting (e.g. image scaling).
+
+*/
+#define kOfxImageEffectPropSupportsImageFormat "OfxImageEffectPropSupportsImageFormat "
+
+
 /** @brief Indicates whether a clip, plugin or host supports tiled images
 
    - Type - int X 1
@@ -1394,6 +1436,50 @@ This will be in \ref PixelCoordinates
  */
 #define kOfxImageEffectPropRenderWindow "OfxImageEffectPropRenderWindow"
 
+/**  @brief The region to be rendered.
+
+- Type:  a string property that takes one of two values
+- Property Set - a plugin instance (rw) that can be modified in instance creation and instance change action, kOfxActionInstanceChanged
+- Valid Values - this must be one of:
+	- kOfxImageEffectGeneratorFormatMaster  - there are no fields to deal with, all images are full frame
+	- kOfxImageEffectGeneratorFormatSlave  - the imagery is fielded and both scan lines should be renderred
+- Default: Generators that do not set this property will be defaulted to FormatSlave - the current behaviour (with spatial format inherited from  kOfxImageEffectPropProject properties)
+
+A generator of type kOfxImageEffectGeneratorFormatMaster will have the kOfxImageEffectActionGetImageFormat action called to determine the format of the clip being created, 
+while a kOfxImageEffectGeneratorFormatSlave will not. A slave will have the format determined for it by the host and the relevant properties available on the output clip.
+
+*/
+#define kOfxImageEffectPropGeneratorType "OfxImageEffectPropGeneratorType"
+
+/**  @brief Spatial format - output dimension
+
+- Type - integer X 2
+- Property Set - a read-write property valid after instance creation.
+- Default:  Project Size in pixels
+
+\pre
+	logically changing this value needs to happen before Region of Definition action
+
+A 2D integer indicating the resolution in pixels of the output image, this is always full res with no render scale applied.
+An host that has a special parameter already for formatting can put format parameter, otherwise plugin is expected to put parameters.`
+
+*/
+#define kOfxImageEffectImageFormatResolution "OfxImageEffectImageFormatResolution"
+
+/**  @brief Spatial format - output aspect ratio
+
+- Type - double X 1
+- Property Set - a read-write property valid after instance creation.
+- Default:  Project Aspect Ratio, if not defined in host, assume 1.0
+
+\pre
+logically changing this value needs to happen before Region of Definition action
+
+A double indicating the image aspect ratio of the output image.
+An host that has a special parameter already for formatting can put format parameter, otherwise plugin is expected to put parameters.`
+
+*/
+#define kOfxImageEffectImageFormatAspectRatio "OfxImageEffectImageFormatAspectRatio"
 
 /** String used to label imagery as having no fields */
 #define kOfxImageFieldNone "OfxFieldNone"
