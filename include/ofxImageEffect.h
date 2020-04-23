@@ -929,6 +929,17 @@ then the plugin can detect this via an identifier change and re-evaluate the cac
 */
 #define kOfxImagePropUniqueIdentifier "OfxImagePropUniqueIdentifier"
 
+/** @brief Clip property which indicates the display start frame of the clip
+
+   - Type - double X 1
+   - Property Set -  clip instance (read only)
+   - Default - 0
+
+Plugins should add this value to internal OFX frame numbers when displayed in a plugin user interface, so the user will see the
+same frame numbers as they see in the host's UI.
+*/
+#define kOfxImageClipPropDisplayTimeOffset "kOfxImageClipPropDisplayTimeOffset"
+
 /** @brief Clip and action argument property which indicates that the clip can be sampled continously
 
    - Type - int X 1
