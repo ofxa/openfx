@@ -53,6 +53,7 @@ each represent the actions that can be carried out on those particular OFX objec
 #include <memory>
 #include "ofxsCore.h"
 
+#include "extensions/nuke/fnPublicOfxExtensions.h"
 /** @brief Nasty macro used to define empty protected copy ctors and assign ops */
 #define mDeclareProtectedAssignAndCC(CLASS) \
   CLASS &operator=(const CLASS &) {assert(false); return *this;}	\
@@ -170,6 +171,13 @@ namespace OFX {
 #endif
     };
 
+    enum LayoutHintEnum
+    {
+        eLayoutHintNormal = kOfxParamPropLayoutHintNormal,
+        eLayoutHintDivider = kOfxParamPropLayoutHintDivider,
+        eLayoutHintNoNewLine = kOfxParamPropLayoutHintNoNewLine
+    };
+
     /** @brief Enumerates the differing types of coordinate system for default values */
     enum DefaultCoordinateSystemEnum {
         eCoordinatesCanonical, //!< canonical coordinate system
@@ -239,6 +247,8 @@ namespace OFX {
         bool getHostHasNativeOverlayHandle() const;
         
         void setUseHostNativeOverlayHandle(bool use);
+
+        void setLayoutHint(const LayoutHintEnum layoutHint);
     };
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -636,6 +646,8 @@ namespace OFX {
     public :
         /** @brief whether the initial state of a group is open or closed in a hierarchical layout, defaults to false */
         void setOpen(const bool v);
+
+        void setAsTab();
     };
 
     ////////////////////////////////////////////////////////////////////////////////

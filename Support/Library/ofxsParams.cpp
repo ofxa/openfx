@@ -183,6 +183,12 @@ namespace OFX {
     _paramProps.propSetInt(kOfxParamPropEnabled, v);
   }
 
+  void ParamDescriptor::setLayoutHint(const LayoutHintEnum layoutHint)
+  {
+    // This is a nuke ofx extension property, so it's optional.
+    _paramProps.propSetInt(kOfxParamPropLayoutHint, static_cast<int>(layoutHint), false);
+  }
+
   /** @brief set the group param that is the parent of this one, default is to be ungrouped at the root level */
   void 
     ParamDescriptor::setParent(const GroupParamDescriptor &v)
@@ -888,6 +894,13 @@ namespace OFX {
   void GroupParamDescriptor::setOpen(const bool v)
   {
     _paramProps.propSetInt(kOfxParamPropGroupOpen, v, false); // introduced in OFX 1.2
+  }
+
+  void GroupParamDescriptor::setAsTab()
+  {
+    // PropGroupIdTab is a nuke extension
+    _paramProps.propSetInt(kFnOfxParamPropGroupIsTab, 1,
+                          false); // this property is an optional extension, don't throw if not present.
   }
 
   ////////////////////////////////////////////////////////////////////////////////
