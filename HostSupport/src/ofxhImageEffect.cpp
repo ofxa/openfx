@@ -90,6 +90,7 @@ namespace OFX {
         { kOfxPluginPropFilePath, Property::eString, 1, true, ""},
 #ifdef OFX_SUPPORTS_OPENGLRENDER
         { kOfxImageEffectPropOpenGLRenderSupported, Property::eString, 1, false, "false"}, // OFX 1.3
+        { kOfxOpenGLPropPixelDepth, Property::eString,  0, false, "" },
 #endif
         Property::propSpecEnd
       };
@@ -341,6 +342,7 @@ namespace OFX {
         { kOfxImageEffectPropSupportsTiles,     Property::eInt,        1, false, "1" }, // OFX 1.4
 #ifdef OFX_SUPPORTS_OPENGLRENDER
         { kOfxImageEffectPropOpenGLRenderSupported, Property::eString, 1, false, "false"}, // OFX 1.4
+        { kOfxOpenGLPropPixelDepth, Property::eString,  0, false, "" },
 #endif
         Property::propSpecEnd
       };

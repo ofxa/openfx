@@ -37,6 +37,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "ofxProperty.h"
 #include "ofxMultiThread.h"
 #include "ofxMemory.h"
+#ifdef OFX_SUPPORTS_OPENGLRENDER
+#include "ofxOpenGLRender.h"
+#endif
 
 #include "ofxhHost.h"
 
@@ -88,6 +91,9 @@ namespace OFX {
       { kOfxPropVersion, Property::eInt, 0, false, "0" },
       { kOfxPropVersionLabel, Property::eString, 1, false, "" },
       { kOfxHostSupportHostPointer,    Property::ePointer,    0,    false,    NULL },
+#ifdef OFX_SUPPORTS_OPENGLRENDER
+      { kOfxImageEffectPropOpenGLRenderSupported, Property::eString, 1, false, "false"}, // OFX 1.3
+#endif
       Property::propSpecEnd
     };    
 

@@ -447,8 +447,8 @@ void DotExamplePluginFactory::describeInContext(OFX::ImageEffectDescriptor &desc
 
   Double2DParamDescriptor* param3 = desc.defineDouble2DParam("position");
   param3->setLabels("Dot Position", "Dot Position", "Dot Position");
-  param->setDoubleType(eDoubleTypeXY);
-  param->setDefaultCoordinateSystem(eCoordinatesNormalised);
+  param3->setDoubleType(eDoubleTypeXY);
+  param3->setDefaultCoordinateSystem(eCoordinatesNormalised);
   param3->setAnimates(true);
   param3->setDimensionLabels("X", "Y");
   param3->setDefault(0.5, 0.5);
