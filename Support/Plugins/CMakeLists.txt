@@ -1,0 +1,10 @@
+include(OpenFX)
+
+create_ofx_plugin("Basic")
+create_ofx_plugin("Field")
+create_ofx_plugin("Generator")
+create_ofx_plugin("Invert")
+create_ofx_plugin("MultiBundle")
+create_ofx_plugin("Retimer")
+create_ofx_plugin("Tester")
+create_ofx_plugin("Transition")
