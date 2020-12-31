@@ -1,5 +1,5 @@
 # where are our OFX headers
-OFX_INC_DIR = -I../../../include
+OFX_INC_DIR = -I../../../../../include
 
 # by default we don't optimise
 OPTIMISE = -g
